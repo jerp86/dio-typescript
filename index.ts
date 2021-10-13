@@ -5,25 +5,22 @@ function soma(a: number, b: number) {
 interface IAnimal {
   name: string;
   type: "terrestre" | "aquático";
-  runRoar(loudness: number): void;
-  // runRoar: (loudness: number) => void;
+  domestic: boolean;
 }
 
 interface IFeline extends IAnimal {
   nightVision: boolean;
 }
 
-const animal: IAnimal = {
-  name: "Elefante",
-  type: "terrestre",
-  runRoar: (loudness) => `${loudness}db`,
-};
+interface ICanine extends IAnimal {
+  size: "pequeno" | "medio" | "grande";
+}
 
-animal.runRoar(1);
+type IDomestic = IFeline | ICanine;
 
-const feline: IFeline = {
-  name: "Leão",
+const animal: IDomestic = {
+  name: "cachorro",
   type: "terrestre",
-  runRoar: (loudness) => `${loudness}db`,
-  nightVision: true,
+  domestic: true,
+  size: "medio",
 };
