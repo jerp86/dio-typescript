@@ -1,0 +1,21 @@
+{
+  "name": "dio-typescript",
+  "version": "1.0.0",
+  "description": "Introdução ao TypeScript: Explorando Classes, Tipos e Interfaces",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "José Eduardo Rodrigues Pinto <jerp86>",
+    "email": "jerp4@hotmail.com",
+    "url": "https://github.com/jerp86"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
