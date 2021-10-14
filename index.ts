@@ -1,26 +1,7 @@
-function soma(a: number, b: number) {
-  return a + b;
-}
+const input = document.getElementById("input") as HTMLInputElement;
 
-interface IAnimal {
-  name: string;
-  type: "terrestre" | "aquático";
-  domestic: boolean;
-}
+input.addEventListener("input", (event) => {
+  const input = event.currentTarget as HTMLInputElement;
 
-interface IFeline extends IAnimal {
-  nightVision: boolean;
-}
-
-interface ICanine extends IAnimal {
-  size: "pequeno" | "medio" | "grande";
-}
-
-type IDomestic = IFeline | ICanine;
-
-const animal: IDomestic = {
-  name: "cachorro",
-  type: "terrestre",
-  domestic: true,
-  size: "medio",
-};
+  console.log(input.value);
+});
