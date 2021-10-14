@@ -1,22 +1,9 @@
-interface IDog {
-  name: string;
-  year: number;
-  favoritePark?: string;
-}
+import $ from "jquery";
 
-type TDogReadOnly = {
-  +readonly [K in keyof IDog]-?: IDog[K];
-};
+$.fn.extend({
+  newFunction() {
+    console.log("Called new function");
+  },
+});
 
-class MyDog implements TDogReadOnly {
-  year;
-  name;
-  favoritePark;
-
-  constructor(name, year) {
-    this.name = name;
-    this.year = year;
-  }
-}
-
-const dog = new MyDog("Lisa", 7);
+$("body").newFunction();
