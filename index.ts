@@ -1,7 +1,16 @@
-// Generic types
-
-function addAppendixToList<T>(array: any[], value: T) {
-  return array.map((item) => item + value);
+interface IUser {
+  id: string;
+  email: string;
 }
 
-addAppendixToList([1, 2, 3], 4);
+interface IAdmin extends IUser {
+  office: "manager" | "coordinator" | "supervisor";
+}
+
+function redirect(user: IUser | IAdmin) {
+  if ("office" in user) {
+    // redirecionar para a área de administração
+  }
+
+  // redirecionar para a área do usuário
+}
