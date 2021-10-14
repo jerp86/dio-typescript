@@ -1,13 +1,22 @@
-interface IUser {
-  id: string;
-  email: string;
-  office?: "manager" | "coordinator" | "supervisor" | "employee";
+interface IDog {
+  name: string;
+  year: number;
+  favoritePark?: string;
 }
 
-function redirect(user: IUser) {
-  if (user.office) {
-    // redirecionar para a área de administração
+type TDogReadOnly = {
+  +readonly [K in keyof IDog]-?: IDog[K];
+};
+
+class MyDog implements TDogReadOnly {
+  year;
+  name;
+  favoritePark;
+
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
   }
-
-  // redirecionar para a área do usuário
 }
+
+const dog = new MyDog("Lisa", 7);
