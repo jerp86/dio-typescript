@@ -1,9 +1,12 @@
-import $ from "jquery";
+interface IPerson {
+  name: string;
+  year: number;
+  nationality: string;
+}
 
-$.fn.extend({
-  newFunction() {
-    console.log("Called new function");
-  },
-});
+interface IBrazilian extends Omit<IPerson, "nationality"> {}
 
-$("body").newFunction();
+const brazilianPerson: IBrazilian = {
+  name: "José Eduardo",
+  year: 35,
+};
